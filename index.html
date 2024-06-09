@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Age Calculator App</title>
+		<link
+			rel="stylesheet"
+			href="style.css" />
+		<link
+			rel="shortcut icon"
+			href="assets/images/favicon-32x32.png"
+			type="image/x-icon" />
+	</head>
+	<body>
+		<div class="container">
+			<form action="">
+				<li>
+					<div class="form-head">Day</div>
+					<input
+						type="text"
+						class="cp"
+						name="day"
+						id="day"
+						placeholder="DD" />
+					<p class="no-wrap"></p>
+				</li>
+				<li>
+					<div class="form-head">Month</div>
+					<input
+						type="text"
+						class="cp"
+						name="month"
+						id="month"
+						placeholder="MM" />
+					<p class="no-wrap"></p>
+				</li>
+				<li>
+					<div class="form-head">Year</div>
+					<input
+						type="text"
+						class="cp"
+						name="year"
+						id="year"
+						placeholder="YYYY" />
+					<p class="no-wrap"></p>
+				</li>
+			</form>
+			<div class="btn-area">
+				<div class="btn cp">
+					<img
+						src="assets/images/icon-arrow.svg"
+						alt="Arrow Image" />
+				</div>
+			</div>
+			<ul class="output">
+				<li class="no-wrap"><span>--</span>years</li>
+				<li class="no-wrap"><span>--</span> months</li>
+				<li class="no-wrap"><span>--</span> days</li>
+			</ul>
+		</div>
+		<script src="script.js"></script>
+	</body>
+</html>

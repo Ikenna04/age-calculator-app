@@ -1,0 +1,314 @@
+/* | IMPORTS */
+@font-face {
+	font-family: Poppins800i;
+	src: url(assets/fonts/Poppins-ExtraBoldItalic.ttf);
+	font-style: italic;
+	font-weight: 800;
+}
+
+@font-face {
+	font-family: Poppins700;
+	src: url(assets/fonts/Poppins-Bold.ttf);
+	font-style: normal;
+	font-weight: 700;
+}
+
+@font-face {
+	font-family: Poppins400;
+	src: url(assets/fonts/Poppins-Regular.ttf);
+	font-style: normal;
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: Poppins400i;
+	src: url(assets/fonts/Poppins-Italic.ttf);
+	font-style: italic;
+	font-weight: 400;
+}
+
+/* | CSS RESET  */
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	line-height: 1.5;
+}
+
+/* | UTILITY CLASSES */
+img {
+	display: block;
+}
+
+.no-wrap {
+	white-space: nowrap;
+}
+
+li {
+	list-style-type: none;
+}
+
+.cp {
+	cursor: pointer;
+}
+
+/* | VARIABLES */
+:root {
+	/* | COLORS  */
+	--purple: hsl(259, 100%, 65%);
+	--light-red: hsl(0, 100%, 67%);
+	--white: hsl(0, 0%, 100%);
+	--off-white: hsl(0, 0%, 94%);
+	--light-grey: hsl(0, 0%, 86%);
+	--smokey-grey: hsl(0, 1%, 44%);
+	--off-black: hsl(0, 0%, 8%);
+
+	/* | FONTS  */
+	--xs-font: 400 16px 'Poppins400';
+	--small-font: 400 16px 'Poppins400i';
+	--font-size-inputs: 700 32px 'Poppins700';
+	--font-size-outputs: 800 105px 'Poppins800i';
+}
+
+/* | GENERAL STYLES */
+html {
+	width: 100%;
+	aspect-ratio: 3/2;
+}
+
+body {
+	width: 100%;
+	height: 100%;
+	padding: 176px 32px;
+	background-color: var(--off-white);
+	color: var(--off-black);
+	font: var(--xs-font);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.container {
+	width: 840px;
+	aspect-ratio: 21/17;
+	padding: 60px 55px;
+	border-radius: 20px 20px 200px 20px;
+	background-color: var(--white);
+	display: flex;
+	flex-flow: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	gap: 75px;
+}
+
+form {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 32px;
+}
+
+form li {
+	display: flex;
+	flex-flow: column;
+	gap: 14px;
+	position: relative;
+}
+
+.form-head {
+	text-transform: uppercase;
+}
+
+form.error .form-head {
+	color: var(--light-red);
+}
+
+input {
+	width: 160px;
+	height: 72px;
+	padding-inline-start: 24px;
+	border-radius: 7px;
+	background-color: var(--white);
+	border: 1px solid var(--light-grey);
+	font: var(--font-size-inputs);
+}
+
+form.error input {
+	outline: 1px solid var(--light-red);
+}
+
+input:focus-within {
+	outline: 1px solid var(--smokey-grey);
+}
+
+form li p {
+	color: var(--light-red);
+	font: var(--small-font);
+	font-style: italic;
+	position: absolute;
+	top: 120px;
+	left: 0;
+}
+
+.btn-area {
+	width: 100%;
+	height: 1px;
+	border-top: 1px solid var(--light-grey);
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.btn {
+	width: 96px;
+	height: 96px;
+	border-radius: 50%;
+	background-color: var(--purple);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.btn:hover {
+	background-color: var(--off-black);
+}
+
+.output {
+	font: var(--font-size-outputs);
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-items: flex-start;
+}
+
+.output li {
+	margin-top: -40px;
+}
+
+.output span {
+	color: var(--purple);
+}
+
+span.calc {
+	animation: age 2s forwards 2s cubic-bezier(0.36, 1.11, 0, 0.23);
+}
+
+@keyframes age {
+	0% {
+		font-size: 10%;
+	}
+	80% {
+		font-size: 120%;
+	}
+
+	100% {
+		font-size: 100%;
+	}
+}
+
+@media screen and (max-width: 1150px) {
+	html {
+		aspect-ratio: inherit;
+	}
+
+	.container {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 750px) {
+	/* | VARIABLES */
+	:root {
+		/* | FONTS  */
+		--xs-font: 400 30px 'Poppins400';
+		--small-font: 400 1em 'Poppins400i';
+		--font-size-inputs: 700 1.3em 'Poppins700';
+		--font-size-outputs: 800 3.67em 'Poppins800i';
+	}
+
+	/* | GENERAL STYLES */
+	html {
+		aspect-ratio: 375/812;
+	}
+
+	body {
+		padding: 5.87em 1.1em;
+		align-items: flex-start;
+	}
+
+	.container {
+		width: 100%;
+		aspect-ratio: 7/10;
+		padding: 3.47em 1.6em;
+		border-radius: 1.3em 1.3em 6.7em 1.3em;
+		gap: 4.27em;
+	}
+
+	form {
+		gap: 1.1em;
+	}
+
+	form li {
+		gap: 0.53em;
+	}
+
+	input {
+		width: 4.4em;
+		height: 2.7em;
+		padding-inline-start: 0.8em;
+	}
+
+	form li p {
+		top: 6em;
+	}
+
+	.btn-area {
+		justify-content: center;
+	}
+
+	.btn {
+		width: 4.27em;
+		height: 4.27em;
+	}
+
+	.btn img {
+		width: 1.73em;
+		height: auto;
+	}
+
+	.output li {
+		margin-top: -0.4em;
+	}
+}
+
+@media screen and (max-width: 700px) {
+	/* | VARIABLES */
+	:root {
+		/* | FONTS  */
+		--xs-font: 400 25px 'Poppins400';
+	}
+}
+
+@media screen and (max-width: 590px) {
+	/* | VARIABLES */
+	:root {
+		/* | FONTS  */
+		--xs-font: 400 20px 'Poppins400';
+	}
+}
+
+@media screen and (max-width: 480px) {
+	/* | VARIABLES */
+	:root {
+		/* | FONTS  */
+		--xs-font: 400 16px 'Poppins400';
+	}
+}
+
+@media screen and (max-width: 375px) {
+	/* | VARIABLES */
+	:root {
+		/* | FONTS  */
+		--xs-font: 400 15px 'Poppins400';
+	}
+}
